@@ -10,4 +10,11 @@
 body {
     color: var(--text);
     background: var(--background);
+    font-family: "noto sans";
+}
+
+h1,
+h2,
+h3 {
+    font-family: "lobster";
 }
