@@ -6,7 +6,8 @@ body {
     --accent: #f0f6ed;
 
 }
-*{
+
+* {
     border: 1px solid var(--accent);
     padding-left: 1px;
     padding-right: 1px;
@@ -15,6 +16,7 @@ body {
     width: 600px;
     border-color: white;
 }
+
 body {
     color: var(--text);
     background: var(--background);
@@ -31,6 +33,14 @@ h3 {
     text-decoration-thickness: larger;
 }
 
-img{
-border-radius: 10000px;
+img {
+    border-radius: 10000px;
+}
+
+a:link {
+    color: darkblue;
+}
+
+a:visited {
+    color: black;
 }
