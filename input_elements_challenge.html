@@ -68,8 +68,8 @@
         newsletter</label
       >
       <p>Pick a mode:</p>
-      <label><input type="radio" name="mode" value="Light" /> Light</label>
-      <label><input type="radio" name="mode" value="Dark" /> Dark</label>
+      <label><input type="radio" name="mode" id= "light" value="Light" /> Light</label>
+      <label><input type="radio" name="mode" id= "dark" value="Dark" /> Dark</label>
       <label
         ><input type="radio" name="mode" value="System" checked /> System</label
       >
@@ -105,7 +105,6 @@
       colorInput.addEventListener("input", () => {
         colorOutput.style.backgroundColor = colorInput.value
       });
-
       // TODO: Update the background color of colorOutput whenever the color input changes.
       // Challenge: Also display the hex code and volume value dynamically.
 
@@ -113,8 +112,22 @@
       const subscribeBox = document.getElementById("subscribeBox");
       const btnSubmit = document.getElementById("btnSubmit");
       const modeOutput = document.getElementById("modeOutput");
-
+      let lightMode = document.getElementById("lightMode");
+      let darkMode = document.getElementById("darkMode")
+      let systemMode = document.getElementById("systemMode")
       btnSubmit.addEventListener("click", () => {
+        if(lightMode.checked){
+          displayLight
+          if(darkMode.checked){
+            displayDark
+            if(systemMode.checked){
+              displaySystem
+            }
+          }
+        }
+        lightMode.textContent = "Light Mode Activated!";
+        darkMode.textContent = "Dark Mode Activated!";
+        systemMode.textContent = "System Mode Activated!";
         // TODO: Find which radio button is checked and display it.
         // Challenge: Include whether the user subscribed or not.
       });

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Clicker Game with CPC Upgrades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #button, #upgrade {
+      font-size: 24px;
+      padding: 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    #score {
+      font-size: 28px;
+      margin-top: 20px;
+    }
+    #upgrade {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Clicker Game</h1>
+  <button id="button">Click Me!</button>
+  <button id="upgrade">Buy Upgrade (Cost: 50)</button>
+  <div id="score">Score: 0</div>
+  <div id="cpc">CPC: 1</div>
+
+  <script>
+    let score = 0;
+    let cpc = 1; // clicks per click
+    let upgradeCost = 50;
+
+    const button = document.getElementById("button");
+    const upgrade = document.getElementById("upgrade");
+    const scoreDisplay = document.getElementById("score");
+    const cpcDisplay = document.getElementById("cpc");
+
+    // Manual click
+    button.addEventListener("click", () => {
+      score += cpc;
+      updateDisplay();
+    });
+
+    // Upgrade button
+    upgrade.addEventListener("click", () => {
+      if (score >= upgradeCost) {
+        score -= upgradeCost;
+        cpc *= 700; // double clicks per click
+        upgradeCost *= 2; // next upgrade costs double
+        upgrade.textContent = "Buy Upgrade (Cost: " + upgradeCost + ")";
+        updateDisplay();
+      } else {
+        // ✅ Always show alert if not enough points
+        window.alert("Nice Try Brokie");
+      }
+    });
+
+    function updateDisplay() {
+      scoreDisplay.textContent = "Score: " + score;
+      cpcDisplay.textContent = "CPC: " + cpc;
+    }
+  </script>
+  
+</body>
+</html>
+</body>
+</html>
+</body>
+</html>
